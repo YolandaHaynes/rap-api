@@ -51,7 +51,8 @@ app.get('/api/rappers/:rapperName', (request, response) =>{
 })
 
 //a method to use to talk to the server
-app.listen(PORT, ()=> {
+// when using process.env.PORT, it tells heroku it can use its assigned port, then when using locally the || syntax will allow to use the variable PORT that was assigned which is 8000
+app.listen(process.env.PORT || PORT, ()=> {
     console.log(`Server running on port ${PORT}`) //shows on console is server is running by created a port variable
 })
 
